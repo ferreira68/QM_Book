@@ -1,0 +1,19 @@
+set terminal latex
+set output "CationPlacement.tex"
+
+set title "Cation Interaction Energy"
+set xlabel "$r\left(\mathrm{Na}^+\right)$"
+set xtics nomirror
+set ylabel "B3LYP Energy (kcal/mol)"
+set y2label "PM3 Energy (kcal/mol)"
+
+set ytics nomirror
+set y2tics 2
+
+plot "B3LYP_Cation_Placement_CGTAAAGCTTACGA.csv" title "CGTAAAGCTTACGA" with points 11, \
+     "B3LYP_Cation_Placement_CGTAAAGCTTACGA.csv" notitle lt 1 smooth cspline, \
+     "B3LYP_Cation_Placement_CGTAACGATTACGA.csv" title "CGTAACGATTACGA" with points 5, \
+     "B3LYP_Cation_Placement_CGTAACGATTACGA.csv" notitle lt 5 smooth cspline, \
+     "PM3_Cation_Placement_CTAAGGGTTACA.csv" title "CTAAGGGTTACA (PM3)" axes x1y2 with points 1, \
+     "PM3_Cation_Placement_CTAAGGGTTACA.csv" notitle axes x1y2 lt 4 smooth cspline
+
