@@ -1,0 +1,88 @@
+% ------------------------------------------------------------------------
+% Book Outline
+% ------------------------------------------------------------------------
+
+\documentclass[oneside,12pt]{book}
+\usepackage[ansinew]{inputenc}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{cite}
+\usepackage{rotating}
+% ----------------------------------------------------------------------
+%  stuff to make margins smaller because book margins put too little
+%  on a page
+% ----------------------------------------------------------------------
+%\addtolength{\oddsidemargin}{-.75in}
+%	\addtolength{\evensidemargin}{-.75in}
+%	\addtolength{\textwidth}{1.5in}
+%
+%	\addtolength{\topmargin}{-.875in}
+%	\addtolength{\textheight}{1.75in}
+
+\makeindex
+% ------------------------------------------------------------------------
+% Document Starts here:
+% ------------------------------------------------------------------------
+
+\begin{document}
+
+% ------------------------------------------------------------------------
+% Set the default path for included graphics
+% ------------------------------------------------------------------------
+\graphicspath{{Graphics/}}
+
+\frontmatter
+\title{Large-Scale Quantum Chemistry: A Practical Guide for Electronic Structure Calculations}
+\author{Antonio M.\ Ferreira and Henry A.\ Kurtz}
+%  \affiiation{Department of Structural Biology\\
+%         St. Jude Children's Research Hospital\\
+%         262 Danny Thomas Place, Mail Stop 311\\
+%         Memphis, Tennessee 38105}
+%\author{Henry A. Kurtz}
+%   \affiliation{Department of Chemistry\\
+%        The University of Memphis\\
+%        Memphis, Tennessee 38152}
+
+\maketitle
+
+\tableofcontents
+
+\chapter*{Preface}
+
+
+This is an attempt to start collecting the ideas for each chapter and what we may need.  It serves as an organization of ideas mostly.  It is also a good way for me to relearn to use TeX and the software again.  I can use the practice.
+
+I assume that best way to proceed will to make each chapter a different file and work on them separately.  In fact on the publisher's web page of instructions they want each chapter as a separate file it looks like.  We could divide them to do the first drafts.  One start would be: Tony - 4,5; Henry - 2,3.  We should talk a bit more about 1, 6, and 7.  The sections are based on what was in the proposal and I expect they will change a lot as it goes.
+
+\mainmatter
+\include {Chapter1}
+
+\include {Chapter2}
+
+\include {Chapter3}
+
+\include {Chapter4}
+
+\include {Chapter5}
+
+\include {Chapter6}
+
+\include {Chapter7}
+
+
+
+
+\bibliographystyle{unsrt}
+% \bibliography{bookrefs}
+%
+% NOTE: Henry, you need to add the bookrefs.bib file to the CVS repository
+%       with the "cvs add bookrefs.bib" command, followed by a "cvs commit"
+%       to make sure it gets into the repository.  My compilations only get
+%       the references in the DNA.bib file.  We can use as many .bib files
+%       as we like (see the new command below).
+\bibliography{BibTeX/DNA,BibTeX/DNA_Tony,BibTeX/bookrefs}
+\printindex
+\end{document}

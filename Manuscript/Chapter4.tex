@@ -1,0 +1,461 @@
+% CHAPTER 4
+\chapter[Nucleic Acid Systems]{Electronic Structure for Nucleic Acid Systems}
+
+Having established the foundations of quantum chemistry for condensed
+matter systems, we now turn our attention to nucleic acids.  Modern
+molecular biology has focused a great deal of attention toward
+understanding the structure and function of this class of molecule.
+The very first quantum chemical calculations on DNA\cite{LADIK1964} by
+Ladik and Hoffman date back to 1964 and were focused primarily on
+semiempirical treatments of the band structure.
+
+
+
+\section{Start Small:  Early Studies of DNA Bases}
+An impressive body of work concerning small numbers of DNA bases has
+come from the collaboration of Ji\u{r}\'{i} \v{S}poner, Pavel Hobza,
+and Jerzy
+Leszczynski.\cite{Sponer1994,Sponer2001a,Sponer02,Reha02,Sponer04,Sponer2005a,Perez2005,Kabelac2007}
+
+Our examination of larger systems relies on the fundamental
+description of the electronic structure of smaller
+
+\begin{figure}[tb]
+  \newlength{\panelwidth}
+  \setlength{\panelwidth}{0.485\textwidth}
+  \newlength{\capwidth}
+  \setlength{\capwidth}{\textwidth}
+  \begin{tabular}{lr}
+    \begin{minipage}{\panelwidth}
+      \includegraphics[width=\panelwidth]{YP-01.cations.B3LYP-STO3G.ecce.DOS.eps}
+    \end{minipage} &
+    \begin{minipage}{\panelwidth}
+      \includegraphics[width=\panelwidth]{YP-01.cations.B3LYP-SBK.ecce.DOS.eps}
+    \end{minipage} \\
+    \begin{minipage}{\panelwidth}\centering STO-3G\end{minipage} &
+    \begin{minipage}{\panelwidth}\centering SBKJC ECP\end{minipage}\\[4ex]
+    \multicolumn{2}{c}{
+    \begin{minipage}{\capwidth}
+        \caption{Comparison of the density of states plots for the
+        sequence CGTAAGGGTTACA generated using the B3LYP density
+        functional.
+        \label{Fig:DOS_Comparison}}
+    \end{minipage}} \\
+  \end{tabular}
+\end{figure}
+
+Choice of basis set has a tremendous influence on the quality of the
+results as illustrated by Figure \ref{Fig:DOS_Comparison}.
+The two density of states\index{density of states} plots were
+generated from the same d(CGTAAGGGTTACA) canonical double-helix with
+counterions using the B3LYP density functional, with only the basis
+set differing between the two calculations.  The most obvious
+defference between these two calculations is the distribution of
+states around the HOMO--LUMO gap. In the minimal basis calculation,
+this gap is nearly 3 eV, whereas using the ECP basis set produces a
+gap of less than 1 eV.  Furthermore, the energy of the HOMO in the
+STO-3G calculation is positive, suggesting that the HOMO is an unbound
+electron state.
+
+A closer examination of the DOS plot for the B3LYP/SBKJC calculation
+reveals some interesting and important features.  A collection of
+states creates a peak between -2 and -1 eV just above the HOMO.  This
+collection of empty states represents the unoccupied \textit{s}
+orbitals on the Na counterions.  They are bound states and there is a
+small gap between the HOMO of the oligonucleotide and the lower edge
+of this unoccupied band.  Another important feature is the small
+collection of unoccupied bound states just below 0 eV.  They are part
+of a much larger set of states with a peak near 0.5 eV, but their
+physical importance is tied to their negative energies.
+
+As was discussed in the theoretical background, a semiconductor system
+contains a set of unoccupied states with negative energy with the
+Fermi gap separating the band of occupied and unoccupied states.  What
+we see emerging in the calculations is the electronic structure of a
+semiconductor system and the failure of the minimal basis set
+treatment to describe this represents a serious shortcoming.  While
+the ECP basis set neglects a direct treatment of the core orbitals, it
+does describe the important features of the frontier molecular
+orbitals with only a double-$\zeta$ quality basis set.
+
+\begin{figure}[tb]
+  % \newlength{\panelwidth}
+  \setlength{\panelwidth}{0.485\textwidth}
+  % \newlength{\capwidth}
+  \setlength{\capwidth}{\textwidth}
+  % \addtolength{\capwidth}{-6.0\tabcolsep}
+  \begin{tabular}{lr}
+    \begin{minipage}{\panelwidth}
+      \includegraphics[width=\panelwidth]{DNA_Trimer_BasisSetDependence/AGC.B3LYP-321G.HOMO.eps}
+    \end{minipage} &
+    \begin{minipage}{\panelwidth}
+      \includegraphics[width=\panelwidth]{DNA_Trimer_BasisSetDependence/AGC.B3LYP-ccpVTZ.HOMO.eps}
+    \end{minipage} \\
+    \begin{minipage}{\panelwidth}\centering 3-21G\end{minipage} &
+    \begin{minipage}{\panelwidth}\centering cc-pVTZ\end{minipage}\\[4ex]
+    \begin{minipage}{\panelwidth}
+      \includegraphics[width=\panelwidth]{DNA_Trimer_BasisSetDependence/AGC.B3LYP-pAhlrichs.HOMO.eps}
+    \end{minipage} &
+    \begin{minipage}{\panelwidth}
+      \includegraphics[width=\panelwidth]{DNA_Trimer_BasisSetDependence/AGC.B3LYP-SBK.HOMO.eps}
+    \end{minipage} \\
+    \begin{minipage}{\panelwidth}\centering p-Ahlrichs\end{minipage} &
+    \begin{minipage}{\panelwidth}\centering SBKJC ECP\end{minipage}\\[4ex]
+    \multicolumn{2}{c}{
+    \begin{minipage}{\capwidth}
+        \caption{Comparison of the highest occupied molecular orbital (HOMO)
+        for the three base pair dsDNA (AGC) using four different AO basis sets.
+        It is imporatnt to note that the qualitative description of the HOMO
+        differs significantly for the 3-21G basis set versus the other three
+        basis sets.  However, the double-$\zeta$ quality effective core
+        potential gives a qualitative description nearly identical to that of
+        the much higher-quality polarized basis sets.
+        \label{Fig:HOMO_Comparison}}
+    \end{minipage}} \\
+  \end{tabular}
+\end{figure}
+
+
+
+\section{Large-scale Calculations of Electronic Structure}
+Ultimately, the goal of any computational technique is to provide
+insight into experiments that take place in the laboratory.
+Biological system present an array of modelling challenges with scale
+and complexity being foremost among them.  Molecules important to
+biologists function in living systems and are therefore subject to an
+extraordinarily complex network of interactions.  Properly describing
+the environmental conditions in which these molecular species function
+is often difficult, if not impossible.
+
+
+\begin{figure}[tb]
+\includegraphics[width=\textwidth]{AGCT_SBK-HOMO.eps}
+\caption{Orbital diagram for the HOMO of d(AGCT) obtained from B3LYP/SBKJC.\label{Fig:AGCT_HOMO}}
+\end{figure}
+
+\begin{figure}[tb]
+\includegraphics[width=\textwidth]{AAGCTT_SBK-HOMO.eps}
+\caption{Orbital diagram for the HOMO of d(AAGCTT) obtained from B3LYP/SBKJC.\label{Fig:AAGCTT_HOMO}}
+\end{figure}
+
+
+\subsection{Convergence Issues}
+Because nucleic acid systems carry significant negative charge in the
+phosphate backbone, the treatment of increasing numbers of nucleobases
+requires the solution of Hamiltonians associated with increasing
+diffuse orbitals.
+
+In practice, this means that systems containing more than eight base
+pairs are impossible to converge to a stable wavefunction.
+Convergence of the SCF procedure can be achieved for sequences of up
+to eight base pairs by treating only the DNA atoms with an appropriate
+total charge derived from the number of phosphate groups in the
+backbone.  This is possible because the excess negative charge resides
+in the phosphate oxygen atoms rather than throughout the molecule.
+Unfortunately this phenomenon, which allows the treatment of
+medium-sized systems, causes problems when going beyond eight base
+pairs.  Mixing of the valence shell AOs on the exocyclic oxygen atoms
+occurs with larger systems and hinders SCF convergence to the point of
+failure, even when given very large (> 200) numbers of cycles in which
+to perform the SCF procedure.  An examination of such calculations
+reveals that the mixing of atomic orbitals associated with the
+exocyclic oxygen atoms leads to eigenvectors with nearly degenerate
+energies.
+
+An obvious solution to this problem is to introduce point
+charges neart these phosphate O atoms to localize the electron density
+and ameliorate the degeneracy problem.  The challenge is to avoid
+perturbing the electronic structure of the dsDNA system in the
+process.  A series of calculations can be performed using dsDNA, in which Na
+cations are placed at varying distances along the vector bisecting
+the O-P-O bond of the exocyclic oxygen atoms (See
+Fig. \ref{Fig:Cation_Placement}).  Fitting the data points to a Morse
+potential identifies the point at which there is the strongest
+interaction between the dsDNA and the Na cations.  For the B3LYP
+calculations, this distance works out to be 2.37 $\AA$.  While all
+these calculations converge in the SCF procedure, the challenge is to
+balance convergence against interaction and total time for the
+computation.  Larger distances converge more slowly as the eigensolver
+deals with the nearly degenerate oxygen AOs.  We have found the best
+balance to be at a distance of about $3.4\,\AA$.  This produces
+reliable convergence without interacting too strongly with the dsDNA
+of interest.  This is borne out in the density of states plots shown below.
+
+\begin{figure}[tb]
+\input{Graphics/CationPlacement}
+\caption{The cation interaction energies for the two sequences
+  calculated at the B3LYP/STO-3G level of theory are essentially
+  identical, while the PM3 result shows the lack of dispersion
+  treatment inherent in the semiempirical treatment.
+  \label{Fig:Cation_Placement}}
+\end{figure}
+
+\begin{figure}[tb]
+\includegraphics[width=\textwidth]{CationPlacement.eps}
+\caption{The cation interaction energies for the two sequences
+  calculated at the B3LYP/STO-3G level of theory are essentially
+  identical, while the PM3 result shows the lack of dispersion
+  treatment inherent in the semiempirical treatment.
+  \label{Fig:Cation_Placement}}
+\end{figure}
+
+\begin{sidewaystable}
+\centering
+\begin{tabular}{ccc}
+  \includegraphics[keepaspectratio,height=3.4in]{YP-15_LocalSCF-PM3-HOMO.v2.eps}
+  &
+  \includegraphics[keepaspectratio,height=3.4in]{YP-15_STO3G-HOMO.v2.eps} &
+  \includegraphics[keepaspectratio,height=3.4in]{YP-15_SBK-HOMO.v2.eps} \\
+\end{tabular}
+\caption{\label{Fig:LinearScalingOrbitals}}
+\end{sidewaystable}
+
+
+%\begin{figure}[tb]
+%\includegraphics[width=\textwidth]{YP-15_LocalSCF-PM3-HOMO.v2.eps}
+%\caption{\label{Fig:YP8_HOMO_alongdipole}}
+%\end{figure}
+
+%\begin{figure}[tb]
+%\includegraphics[width=\textwidth]{YP-15_SBK-HOMO.eps}
+%\caption{\label{Fig:YP8_HOMO_alongdipole}}
+%\end{figure}
+
+%\begin{figure}[tb]
+%\includegraphics[width=\textwidth]{YP-15_STO3G-HOMO.eps}
+%\caption{\label{Fig:YP8_HOMO_alongdipole}}
+%\end{figure}
+
+\subsection{Linear Scaling Approximations}
+Linear scaling approximations have become a popular method for
+treating systems with many hundreds to thousands of atoms quantum
+mechanically.  The two most popular implementations are MOZYME method
+in Jimmy Stewart's MOPAC2009 package (and previous MOPAC versions from
+Fujitsu) and the divide and conquer approach as implemented in DivCon,
+which was developed by Kenneth Merz and Lance Westerhoff.
+Additionally, the LoaclSCF approach from Victor Anisimov has gained
+popularity in recent years.  As the theory behind these approximations
+has already been described, we turn our attention to an assessment of
+the results obtained from these approaches.
+
+
+
+
+\subsection{Fragment Based Treatments}
+[WAITING FOR CALCULATIONS]
+
+
+\section{Case Study: Ecteinascidin 743}
+Having dicussed the considerations necessary for a proper treatment of
+large nucleic acid systems, we are now in a position to examine a
+particular problem for which electronic structure is of critical
+importance.  Namely, the chemical reaction between dsDNA and the
+natural product Ecteinascidin 743 (Et-743).  Et-743 is an isolate from
+sea squirts and has been prepared by \textit{de novo} synthesis by
+Corey and coworkers.  This compound is a DNA methylator, which forms a
+bond with the N2 carbon of Guanine bases via minor groove
+intercalation.
+
+Pommier\cite{Pommier96} studied the relative kinetics of this reaction
+among the sixteen possible sequences in which the central three base
+pairs were systematically permuted.  It is somewhat remarkable that
+minor permutations in the sequence can lead to drastically different
+reaction kinetics.  The explanation for this has been a theory called
+\textit{direct readout}.\cite{Hurley98} Under the hypothesis of direct
+readout\index{direct readout} an approching chemical enitity is
+influenced by changes in electrostatic potential at the exterior of
+the double helix caused by variations in the nucleobases at the
+interior.  The varying electrostatic interactions allow for favorable
+or unfavorable interactions with the minor groove leading to
+differential intercalation (and thereby methylation) energetics.
+
+Wether or not subtle sequence variations are sufficient to cause the
+requisite charge variation along the phosphate backbone is an
+important question that can be addressed using electronic structure
+calculations.  As discussed previously, there are several models for
+computing atomic charges withing the Hartree-Fock framework.  While
+the strengths and shortcomings of each are well known, a qualitative
+description is well withing the capabilities of nearly all of the
+atomic charge models.  Here we will examine Mulliken charges
+calculated using the B3LYP/SBKJC methodology discussed earlier.
+
+For each of the sixteen sequences used in the Pommier experiments, a
+B3LYP/SBKJC single-point energy calculation was performed.  Thus, we
+have a set of molecular orbitals and a set of atomic charges from
+which to work.
+
+
+
+
+\subsection{How Big is Big Enough}
+Transcription of information coded in DNA to proteins is a fundamental
+process in biological systems.  Codons represent the smallest distinct
+unit of information relevant to this process.  Therefore, it is
+reasonable to view a codon (three base pairs) as the fundamental unit
+that must be accurately described in a treatment of the electronic
+structure of DNA.  We wish, then, to answer the following question:
+how do we accurately treat the electronic structure of a codon-size
+piece of DNA?  Similarly, what is the smallest dsDNA system required
+to produce a self-consistent description of the orbitals of a codon?
+
+Developing a practical answer to this question requires an
+understanding of what the orbital structure of a three base pair
+segment looks like in the context of increasingly extended treatments
+with respect to the length of the surrounding sequence.
+
+Accurate calculations of orbital energies are challenging even on
+small test systems of dsDNA when counterions are not present.  In
+fact, we can see from the results in  Table
+\ref{Tab:Trimer_Orbital_Energies} that density functional theory fails
+to predict appropriate orbital energies even when given a large basis
+set like the polarized Ahlrichs basis set.\ref{basis_pAhlrichs}
+Fortunately, removing the core orbitals from the DFT treatment results
+in a dramatic improvement of the orbital energies but fails to improve
+the difference in the frontier molecular orbitals.  The effective core
+potential approach combined with the B3LYP functional seems to give a
+fortuitous cancellation of errors and suggests a practical method we
+may use to treat larger systems. \marginpar{NOTE: We need to put the
+  orbital energies obtained \textbf{with} the counterions into this table!}.
+
+
+\begin{sidewaystable}
+  \begin{tabular}{lrrrrrrrr}
+                    & B3LYP/ & B3LYP/     & B3LYP/  & HF/     & MP2/    & B3LYP/  & B3LYP/     & B3LYP/  \\
+  Orbital           & 3-21G  & 6-31G($d$) & cc-pVDZ & cc-pVDZ & cc-pVDZ & cc-pVTZ & p-Ahlrichs & SBKJC   \\
+  \hline\\[0.5ex]
+  $\mathrm{LUMO}+5$ & 0.2144 & 0.2087     & 0.2083  &  0.3550 &  0.3550 &  0.1981 & 0.2032     &  0.1937 \\
+  $\mathrm{LUMO}+4$ & 0.2123 & 0.2042     & 0.2031  &  0.3478 &  0.3478 &  0.1894 & 0.1988     &  0.1884 \\
+  $\mathrm{LUMO}+3$ & 0.2021 & 0.1917     & 0.1903  &  0.3319 &  0.3319 &  0.1780 & 0.1855     &  0.1774 \\
+  $\mathrm{LUMO}+2$ & 0.1898 & 0.1849     & 0.1839  &  0.3273 &  0.3273 &  0.1730 & 0.1793     &  0.1712 \\
+  $\mathrm{LUMO}+1$ & 0.1874 & 0.1809     & 0.1807  &  0.3176 &  0.3176 &  0.1691 & 0.1752     &  0.1652 \\
+  $\mathrm{LUMO}$   & 0.1857 & 0.1776     & 0.1766  &  0.3163 &  0.3162 &  0.1655 & 0.1716     &  0.1641 \\
+  $\mathrm{HOMO}$   & 0.0471 & 0.0407     & 0.0415  & -0.0465 & -0.0465 &  0.0289 & 0.0357     &  0.0222 \\
+  $\mathrm{HOMO}-1$ & 0.0348 & 0.0126     & 0.0154  & -0.0763 & -0.0763 &  0.0019 & 0.0115     & -0.0038 \\
+  $\mathrm{HOMO}-2$ & 0.0318 & 0.0123     & 0.0128  & -0.0925 & -0.0925 & -0.0052 & 0.0075     & -0.0139 \\
+  $\mathrm{HOMO}-3$ & 0.0247 & 0.0057     & 0.0077  & -0.1074 & -0.1074 & -0.0100 & 0.0033     & -0.0166 \\
+  $\mathrm{HOMO}-4$ & 0.0243 & 0.0040     & 0.0062  & -0.1182 & -0.1182 & -0.0111 & 0.0020     & -0.0177 \\
+  $\mathrm{HOMO}-5$ & 0.0223 & 0.0027     & 0.0057  & -0.1240 & -0.1240 & -0.0124 & 0.0015     & -0.0191 \\
+  \hline\\[0.5ex]
+  $\varepsilon_\mathrm{LUMO} - \varepsilon_\mathrm{HOMO}$ &
+                      0.1386 & 0.1369     & 0.1351  & 0.3628  & 0.3627  &  0.1366 & 0.1359     &  0.1419 \\
+  \hline\\[0.5ex]
+  \end{tabular}
+  \caption{Comparison of the calculated orbital energies for the
+  d(AGC) system using various basis sets.  It is interesting to note
+  that the density functional theory calculations consistently
+  underestimate the HOMO--LUMO gap and that only the Hartree--Fock
+  methods predict that all occupied states are bound.\label{Tab:Trimer_Orbital_Energies}}
+\end{sidewaystable}
+
+
+\subsection{It's all about the orbitals}
+
+
+\begin{table}
+\begin{tabular}{lllllll}
+ & \multicolumn{2}{c}{CTAA\underline{TGT}TTACA} & 
+   \multicolumn{2}{c}{CTAA\underline{TGG}TTACA} &
+   \multicolumn{2}{c}{CTAA\underline{AGC}TTACA} \\
+ & P & Na & P & Na & P & Na \\
+\hline\\[0.5ex]
+1         & 0.4510 & 0.8589 & 0.4510 & 0.8591 & 0.4544 & 0.8589 \\
+2         & 0.4507 & 0.8567 & 0.4507 & 0.8570 & 0.4517 & 0.8550 \\
+3         & 0.4507 & 0.8556 & 0.4508 & 0.8561 & 0.4357 & 0.8562 \\
+4         & 0.4540 & 0.8559 & 0.4538 & 0.8566 & 0.4510 & 0.8542 \\
+5         & 0.4522 & 0.8561 & 0.4489 & 0.8544 & 0.4485 & 0.8520 \\
+6         & 0.4479 & 0.8528 & 0.4467 & 0.8518 & 0.4468 & 0.8557 \\
+7         & 0.4503 & 0.8529 & 0.4523 & 0.8518 & 0.4512 & 0.8564 \\
+8         & 0.4504 & 0.8530 & 0.4507 & 0.8523 & 0.4518 & 0.8566 \\
+9         & 0.4498 & 0.8550 & 0.4498 & 0.8544 & 0.4549 & 0.8555 \\
+10        & 0.4552 & 0.8574 & 0.4551 & 0.8569 & 0.4538 & 0.8547 \\
+11        & 0.4572 & 0.8611 & 0.4572 & 0.8609 & 0.4483 & 0.8568 \\
+\hline\\[0.5ex]
+Average   & 0.4518 & 0.8559 & 0.4515 & 0.8556 & 0.4515 & 0.8556 \\
+Std. Dev. & 0.0027 & 0.0026 & 0.0029 & 0.0030 & 0.0027 & 0.0017 \\
+Range     & 0.0093 & 0.0083 & 0.0105 & 0.0091 & 0.0080 & 0.0069 \\
+\end{tabular}
+\caption{Comparison of the charge variation along the backbone of three
+         distinct dsDNA sequences.  The central three bases correspond
+         to sequences with poor, moderate, and good alkylation as observed
+         in the experiments of Pommier.  Interestingly, the sequence with
+         the most efficient alkylation shows the lowest charge variation
+         among the backbone phosphorous atoms and the sodium counterions.
+         \label{Tab:Phosphate_Charges}}
+\end{table}
+
+In order to examine the question about charge variation along the DNA
+backbone, we calculated the Mulliken charges for
+ds(CTAA\textbf{XXX}TTACA), where \textbf{XXX} = TGT, TGG, and AGC,
+using B3LYP/SBKJC.  Results for the P atoms and the Na counterions are
+reported in Table \ref{Tab:Phosphate_Charges}.  \marginpar{Q: Should
+we report the average charge on the exocyclic O atoms as well?}  We
+have chosen to examine the charge density on the P atoms for two
+reasons.  Firstly, they are directly bonded to the atoms that should
+show the greatest charge variation along the backbone.  Namely the
+exocyclic oxygen atoms, which are highly polarizable because of the
+$d$-bonding present in phosphates.  If there is charge variation along
+the backbone these oxygens should be perturbed by virtue of their
+polarizable electron density.  Secondly, if the bases interior to the
+double helix are responsible for creating charge variation along the
+backbone, they will have to do so (at least in part) through an
+inductive effect.  Any perturbation of the backbone charges must
+effect the P atoms either by perturbing the charge in the ribose rings
+or through direct inductive effects exhibited through bond
+polarization.  Examining the charge on the Na cations is done
+primarily as a reference.  These cations are closed-shell species and
+do not interact with the orbitals of the dsDNA directly, an assertion
+that is easily verified by examining which orbitals contain non-zero
+AO coefficients from the Na orbitals.  There should be no appreciable
+charge variation for these cations and their interaction with any
+electron in the nucleic acid system will be purely electrostatic.
+
+These calculations show remarkably little charge variation among the P
+atoms, with varations measured in the hundreths to thousandsth of a
+charge unit.  Comparing the charge variation to that of the reference
+cations suggests that there is actually no appreciable charge
+variation along the phosphate backbone.  In order for the hypothesis
+of direct readout to work, charge variations of at most $0.105\,e$
+would have to influence the electrostatic interactions between the
+intercalating ligand and the dsDNA substrate.  This seems highly
+unlikely given the solvent dielectric constant screening the backbone
+charge from any approaching ligand.  In the absence of an appreciable
+charge variation along the backbone to explain the sequence
+specificity of Et-743 as an intercalating species, we turn to
+electronic structure theory for a possible explanation.
+
+
+
+
+
+
+
+
+
+\begin{figure}[tb]
+\includegraphics[width=\textwidth]{YP-08_SBK-HOMO.downDipole.eps}
+\caption{\label{Fig:YP8_HOMO_alongdipole}}
+\end{figure}
+
+\begin{figure}[tb]
+\includegraphics[width=\textwidth]{YP-08_STO3G-HOMO.eps}
+\caption{\label{Fig:YP8_HOMO_alongdipole}}
+\end{figure}
+
+
+
+\begin{figure}[tb]
+\includegraphics[width=\textwidth]{YP-08-SBK-Charge.eps}
+\caption{\label{Fig:YP8_HOMO_alongdipole}}
+\end{figure}
+
+\begin{figure}[tb]
+\includegraphics[width=\textwidth]{YP-08_SBK-HOMO.eps}
+\caption{\label{Fig:YP8_HOMO_alongdipole}}
+\end{figure}
+
+
+\begin{figure}[tb]
+\includegraphics[width=\textwidth]{YP-15_SBK-HOMO.downDipole.eps}
+\caption{\label{Fig:YP8_HOMO_alongdipole}}
+\end{figure}
+

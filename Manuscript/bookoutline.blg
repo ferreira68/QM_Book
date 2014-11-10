@@ -1,0 +1,69 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.4)
+The top-level auxiliary file: bookoutline.aux
+A level-1 auxiliary file: Chapter1.aux
+A level-1 auxiliary file: Chapter2.aux
+A level-1 auxiliary file: Chapter3.aux
+A level-1 auxiliary file: Chapter4.aux
+A level-1 auxiliary file: Chapter5.aux
+A level-1 auxiliary file: Chapter6.aux
+A level-1 auxiliary file: Chapter7.aux
+The style file: unsrt.bst
+Database file #1: BibTeX/DNA.bib
+Database file #2: BibTeX/DNA_Tony.bib
+Repeated entry---line 382 of file BibTeX/DNA_Tony.bib
+ : @article{Reha02
+ :                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 425 of file BibTeX/DNA_Tony.bib
+ : @article{Sponer04
+ :                  ,
+I'm skipping whatever remains of this entry
+Database file #3: BibTeX/bookrefs.bib
+Warning--I didn't find a database entry for "???"
+Warning--empty title in Boys
+Warning--empty title in POL55
+Warning--empty title in KohnSham
+Warning--empty title in SBKpot2
+Warning--can't use both author and editor fields in Dolg00
+You've used 30 entries,
+            1791 wiz_defined-function locations,
+            656 strings with 8588 characters,
+and the built_in function-call counts, 6681 in all, are:
+= -- 580
+> -- 289
+< -- 2
++ -- 108
+- -- 78
+* -- 481
+:= -- 1084
+add.period$ -- 86
+call.type$ -- 30
+change.case$ -- 21
+chr.to.int$ -- 0
+cite$ -- 35
+duplicate$ -- 287
+empty$ -- 669
+format.name$ -- 78
+if$ -- 1471
+int.to.chr$ -- 0
+int.to.str$ -- 30
+missing$ -- 34
+newline$ -- 149
+num.names$ -- 31
+pop$ -- 62
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 111
+stack$ -- 0
+substring$ -- 500
+swap$ -- 41
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 5
+while$ -- 64
+width$ -- 32
+write$ -- 320
+(There were 2 error messages)

@@ -1,0 +1,179 @@
+\begin{thebibliography}{10}
+
+\bibitem{SzaboOstland}
+Attila Szabo and Neil~S. Ostland.
+\newblock {\em Modern Quantum Chemistry: Introduction to Advanced Electronic
+  Structure Theory}.
+\newblock McGraw-Hill, 1989.
+
+\bibitem{Atkins}
+Peter Atkins and Ronald Friedman.
+\newblock {\em Molecular Quantum Mechanics, 4th Edition}.
+\newblock Oxford University Press, 2005.
+
+\bibitem{ShavBart}
+I~Shavitt and Rodney~J. Bartlett.
+\newblock {\em Many-Body Methods in Chemistry adn Physics MBPT and
+  Coupled-Cluster Theory}.
+\newblock Cambridge University Press, 2009.
+
+\bibitem{auref}
+who knows.
+\newblock Atomic unit reference.
+\newblock {\em some jounral}, 0:0, 1900.
+
+\bibitem{BOref}
+whoknows.
+\newblock Bo reference.
+\newblock {\em some journal}, 0:0, 1900.
+
+\bibitem{VPrinc}
+unknown.
+\newblock variational principle.
+\newblock {\em none yet}, 0:0, 1900.
+
+\bibitem{Boys}
+S.~F Boys.
+\newblock {\em Proc. R. Sco. (London)}, A200:542, 1950.
+
+\bibitem{POL55}
+P.-O. L\H{o}wdin.
+\newblock {\em Physical Review}, 97:1474--1489, 1955.
+
+\bibitem{KohnSham}
+W.~Kohn and I.~J. Sham.
+\newblock {\em Physical Review}, A140:1133, 1963.
+
+\bibitem{HayWadt1}
+P.~J. Hay and W.~R. Wadt.
+\newblock Ab initio effective core potentials for molecular calculations.
+  potentials for the trnasition metal atoms sc to hg.
+\newblock {\em J. Chem. PHys.}, 82:270, 1985.
+
+\bibitem{HayWadt2}
+P.~J. Hay and W.~R. Wadt.
+\newblock Ab initio effective core potentials for molecular calculations.
+  potentials for main group elements na to bi.
+\newblock {\em J. Chem. Phys.}, 82:284, 1985.
+
+\bibitem{HayWadt3}
+P.~J. Hay and W.~R. Wadt.
+\newblock Ab initio effective core potentials for molecular calculations.
+  potentials for k to au including the outermost core orbitals.
+\newblock {\em J. Chem. Phys.}, 82:299, 1985.
+
+\bibitem{SBKpot1}
+W.~J. Stevens, Basch H., and Krauss M.
+\newblock Compact effective potentials and efficient shared-exponent basis sets
+  for the first- and second-row atoms.
+\newblock {\em J. Chem. Phys.}, 109:3875, 1984.
+
+\bibitem{SBKpot2}
+W.~J. Stevens, M.~Krauss, H.~Basch, and P.~G. Jasien.
+\newblock {\em Can. J. Chem.}, 70:612, 1992.
+
+\bibitem{SBKpot3}
+T.~R. Cundari and W.~J. Stevens.
+\newblock Effective core potential methods for the lanthanides.
+\newblock {\em J. Chem. Phys.}, 98:5555, 1993.
+
+\bibitem{Dolg00}
+Michael Dolg.
+\newblock {\em Modern Methods and Algoritms of Quantum Chemistry, Proceedings},
+  chapter Effective Core Potentials, pages 507--540.
+\newblock John von Neumann Institute for Computing, 2000.
+
+\bibitem{FedKit04}
+D.~G. Fedorov and K.~Kitaura.
+\newblock The importance of three-body erms in the fragment molecular orbital
+  method.
+\newblock {\em J. Chem. Phys.}, 120:6832--6840, 2004.
+
+\bibitem{FedKit07}
+Dmitri~G. Fedorov and Kazuo Kitaura.
+\newblock Extending the power of quantum chemistry to large systems with the
+  fragment molecular orbital method.
+\newblock {\em J. Phys. Chem. A}, 111:6904--6914, 2007.
+
+\bibitem{FedKit}
+Dmiitr~G. Fedorov and Kazuo Kitaura, editors.
+\newblock {\em The Fragment Molecular Orbital Method: Practical Applications to
+  Large Molecular Systems}.
+\newblock CRC Press, 2009.
+
+\bibitem{LADIK1964}
+J~LADIK and T~A HOFFMANN.
+\newblock {QUANTUM MECHANICAL CALCULATION OF THE ELECTRONIC STRUCTURE OF DNA.}
+\newblock {\em Biopolymers symposia}, 13:117--127, 1964.
+
+\bibitem{Sponer1994}
+Jiř\'{\i} \v{S}poner and Pavel Hobza.
+\newblock {Nonplanar Geometries of DNA Bases. Ab Initio Second-Order M\o
+  ller-Plesset Study}.
+\newblock {\em J. Phys. Chem.}, 98:3161--3164, 1994.
+
+\bibitem{Sponer2001a}
+Jiř\'{\i} \v{S}poner, Jerzy Leszczynski, and Pavel Hobza.
+\newblock {Hydrogen bonding, stacking and cation binding of DNA bases}.
+\newblock {\em J. Mol. Struct. (Theochem)}, 573:43--53, 2001.
+
+\bibitem{Sponer02}
+Ji\u{r}\'{i} \v{S}poner, Jerzy Leszczynski, and Pavel Hobza.
+\newblock Electronic {P}roperties, {H}ydrogen {B}onding, {S}tacking, and
+  {C}ation {B}inding of {DNA} and {RNA} {B}ases.
+\newblock {\em Biopolymers (Nucleic Acid Sciences)}, 61(1):3--31, 2002.
+
+\bibitem{Reha02}
+David \v{R}eha, Martin Kabel\'{a}\v{c}, Filip Ryj\'{a}\v{c}ek, Ji\v{r}\'{i}
+  \v{S}poner, Judit~E. \v{S}poner, Marcus Elstner, S\'{a}ndor Suhai, and Pavel
+  Hobza.
+\newblock Intercalators. 1. {N}ature of {S}tacking {I}nteractions between
+  {I}ntercalators ({E}thidium, {D}aunomycin, {E}llipticine, and
+  4'6-{D}iaminide-2-phenylindole) and {DNA} {B}ase {P}airs.
+\newblock {\em J. Am. Chem. Soc.}, 124(13):3366--3376, 2002.
+
+\bibitem{Sponer04}
+Ji\v{r}\'{i} \u{S}poner, Petr Jure\u{c}ka, and Pavel Hobza.
+\newblock Accurate {I}nteraction {E}nergies of {H}ydrogen-{B}onded {N}ucleic
+  {A}cid {B}ase {P}airs.
+\newblock {\em J. Am. Chem. Soc.}, 126(32):10142--10151, 2004.
+
+\bibitem{Sponer2005a}
+Judit~E \v{S}poner, Nad'a \v{S}pa\v{c}kov\'{a}, Jerzy Leszczynski, and
+  Ji$\backslash$vr$\backslash$'i \v{S}poner.
+\newblock {Principles of RNA Base Pairing: Structures and Energies fo the Trans
+  Watson-Crick/Sugar Edge Base Pairs}.
+\newblock {\em J. Phys. Chem. B}, 109:11399--11410, 2005.
+
+\bibitem{Perez2005}
+Alberto P\'{e}rez, Jiri Sponer, Petr Jurecka, Pavel Hobza, F~Javier Luque, and
+  Modesto Orozco.
+\newblock {Are the hydrogen bonds of RNA (AU) stronger than those of DNA (AT)?
+  A quantum mechanics study.}
+\newblock {\em Chemistry (Weinheim an der Bergstrasse, Germany)},
+  11(17):5062--6, August 2005.
+
+\bibitem{Kabelac2007}
+Martin Kabel\'{a}c, Edward~C Sherer, Christopher~J Cramer, and Pavel Hobza.
+\newblock {DNA base trimers: empirical and quantum chemical ab initio
+  calculations versus experiment in vacuo.}
+\newblock {\em Chemistry (Weinheim an der Bergstrasse, Germany)},
+  13(7):2067--77, 2007.
+
+\bibitem{Pommier96}
+Yves Pommier, Glenda Kohlhagen, Christian Bailly, Michael Waring, Abhijit
+  Mazumder, and Kurt~W. Kohn.
+\newblock D{NA} {S}equence- and {S}tructure-{S}elective {A}lkylation of
+  {G}uanine {N}2 in the {DNA} {M}inor {G}roove by {E}cteinascidin 743, a
+  {P}otent {A}ntitumor {C}ompound from the {C}aribbean {T}unicate
+  \textit{{E}cteinascidia turbinata}.
+\newblock {\em Biochemistry}, 35(41):13303--13309, 1996.
+
+\bibitem{Hurley98}
+Frederick~C. Seaman and Laurence~H. Hurley.
+\newblock Molecular {B}asis for the {DNA} {S}equence {S}electivity of
+  {E}cteinascidin 736 and 743: {E}vidence for the {D}ominant {R}ole of {D}irect
+  {R}eadout via {H}ydrogen {B}onding.
+\newblock {\em J. Am. Chem. Soc.}, 120(50):13028--13041, 1998.
+
+\end{thebibliography}

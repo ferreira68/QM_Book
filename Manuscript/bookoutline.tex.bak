@@ -1,0 +1,199 @@
+% ------------------------------------------------------------------------
+% Book Outline
+% ------------------------------------------------------------------------
+
+\documentclass[oneside,12pt]{book}
+\usepackage[ansinew]{inputenc}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\usepackage{amssymb}
+
+% ----------------------------------------------------------------------
+%  stuff to make margins smaller because book margins put too little
+%  on a page
+% ----------------------------------------------------------------------
+\addtolength{\oddsidemargin}{-.75in}
+	\addtolength{\evensidemargin}{-.75in}
+	\addtolength{\textwidth}{1.5in}
+
+	\addtolength{\topmargin}{-.875in}
+	\addtolength{\textheight}{1.75in}
+
+\makeindex
+% ------------------------------------------------------------------------
+% Document Starts here:
+% ------------------------------------------------------------------------
+
+\begin{document}
+
+\title{Large-Scale Quantum Chemistry: A Practical Guide for Electronic Structure Calculations}
+\author{Antonio M.\ Ferreira and Henry A. Kurtz}
+
+%\address{Department of Structural Biology\\
+%         St. Jude Children's Research Hospital\\
+%        262 Danny Thomas Place, Mail Stop 311\\
+%         Memphis, Tennessee 38105}
+
+%\address{Department of Chemistry\\
+%        The University of Memphis\\
+%        Memphis, Tennessee\hspace{1.5ex}38152}
+
+
+\maketitle
+
+
+
+
+
+This is an attempt to start collecting the ideas for each chapter and what we may need.  It serves as an organization of ideas mostly.  It is also a good way for me to relearn to use TeX and the software again.  I can use the practice.
+
+I assume that best way to proceed will to make each chapter a different file and work on them separately.  In fact on the publisher's web page of instructions they want each chapter as a separate file it looks like.  We could divide them to do the first drafts.  One start would be: Tony - 4,5; Henry - 2,3.  We should talk a bit more about 1, 6, and 7.  The sections are based on what was in the proposal and I expect they will change a lot as it goes.
+
+
+\include {Chapter1.tex}
+%CHAPTER 1
+%\chapter{Why Bigger is Better}
+
+%\section{The role of modern computer architecture}
+%Experiments are probing smaller but still a need for larger and larger theory to actually match.
+
+%\section{Quantum effects in biology}
+%Need a discussion of motivation.  That computational biochemistry \index{biochem}  is largely non-electron and empirical.  Can do better than that, particularly if interest in reactions not just structures.
+
+
+%\section{Qualitative versus Quantitative Descriptions}
+
+%CHAPTER 2
+\chapter{A Brief Review of Quantum Chemistry}
+
+\section{Hartree-Fock Theory}
+\subsection{Basis Set Discussion}
+\subsection{Inclusion of Correlation}
+
+\section{Density Functional Theory}
+
+\section{Semiempirical Quantum Chemistry}
+Short discussion of popular schemes
+
+Mozeyme
+
+
+\section{Approaches to Large Molecules}
+\subsection{Fragment-based Methods}
+\subsection{Linear-Scaling Methods}
+\subsection{The ONIOM method}
+\subsection{Local Orbitals versus Canonical Orbitals}
+\subsection{Plane Wave Approximations}
+\subsection{NBO Analysis}
+
+\section{Something about Molecular Mechanics?}
+\subsection{Typical Force Fields and Programs}
+\subsection{Polarizable Force Fields}
+
+%CHAPTER 3
+\chapter{A Primer for Condensed Matter Physics}
+
+\section{Solvent Effects in Electronic Structure Calculations}
+
+\section{The Tight-Binding Model}
+
+\section{Band Structure}
+
+\section{Density of States}
+
+\section{Semiconductors}
+
+
+
+
+% CHAPTER 4
+\chapter{Electronic Structure for Nucleic Acid Systems}
+
+First part is background on nature of nucleic acid structures and into to questions and previous calculations.
+
+Need List of calculations done that will be included and discussed.
+
+\section{Start Small:  Early Studies of DNA Bases}
+
+\section{Large-scale Calculations of Electronic Structure}
+
+\subsection{Convergence Issues}
+
+\subsection{Linear Scaling Approximations}
+
+\subsection{Fragment Based Treatments}
+
+
+
+\section{Case Study: Ecteinascidin 743}
+\subsection{How Big is Big Enough}
+\subsection{It's all about the orbitals}
+
+
+%CHAPTER 5
+\chapter{Electronic Structure for Amino Acid Systems}
+
+
+\section{Why Proteins Differ from DNA: An Electronic Structure Perspective}
+\subsection{Nitrogen as an insulator?}
+
+\section{Taking a Big Bite}
+
+\section{Convergence Characteristics}
+
+\section{Comparison of Linear Scaling and FMO Methods}
+
+\section{Case Study: Dihydopteroate Synthase}
+\subsection{When do you really need all the protein}
+\subsection{Orbital Steering and Quantum Chemistry}
+
+Need List of calculations done that will be included and discussed.
+
+
+%CHAPTER 6
+\chapter{Electronic Structure for Semiconductor Systems}
+
+\section{Periodic Treatments}
+\section{Can we get Band Stricture Directly?}
+\section{What do we lose in the approximations}
+\section{Case Study: ?????}
+Options:
+
+SiO2 systems
+
+another system
+
+
+%CHAPTER 7
+\chapter{General Considerations}
+
+\section{Asking the Right Questions}
+
+\section{What Do We Lose With Approximate Methods}
+
+\section{Is Bigger Always Better?}
+
+\section{How Large Can We Go?}
+
+
+
+
+\begin{thebibliography}{99}
+
+\bibitem{GAMESS}
+  M. W. Schmidt, K. K. Baldridge, J. A. Boatz, S. T. Elbert,
+  M. S. Gordon, J. H. Jensen, S. Koseki, N. Matsunaga,
+  K. A. Nguyen, S. J. Su, T. L. Windus, M. Dupuis, and J. A. Montgomery
+  \textit{J.Comput.Chem.}  \textbf{14}, 1347 (1993).
+
+\bibitem{SBKpot}
+  W. J. Stevens, M. Krauss, H. Basch, and P. G. Jasien, \textit{Can. J.
+  Chem.} \textbf{70}, 612 (1992); T. R. Cundari and W. J. Stevens, \textit{J. Chem.
+  Phys.} \textbf{98}, 5555 (1993).
+
+\end{thebibliography}
+
+\printindex
+
+\end{document}

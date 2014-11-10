@@ -1,0 +1,451 @@
+%CHAPTER 2
+\chapter{A Brief Review of Quantum Chemistry}
+
+The goal of theoretical chemistry has been to provide both correct and efficient methods for understanding and calculating the properties of chemical systems. An ideal goal is to provide the correct answer for any problem.  This is obviously a work in progress but one with lots of progress.  In this chapter the goal is to survey many methods for obtaining electronic properties and provide enough background to understand the approximations involved.  There are many good textbooks and references that can provide the detailed derivations.\cite{SzaboOstland,Atkins,ShavBart}
+
+
+A system composed of n electrons and N atoms is described by the time-independent electronic Hamiltonian,
+\begin{equation}
+H = -\frac{1}{2}\sum_i^n{\nabla^2_i} - \sum_i^n\sum_\nu^N{\frac{Z_\nu}{r_{i\nu}}} + \sum_{i>j}^n{\frac{1}{r_{ij}}} 
+\label{Hoper}
+\end{equation}
+and is the Hamiltonian used within the scope of this book. We will use atomic units\cite{auref} throughout to simplify the expressions unless noted otherwise. The terms in Equation \ref{Hoper} contribute to the energy and are easily identified. The first term is the kinetic energy of the electrons, the second is the electrostatic attraction of the negative electrons with the positive nuclei, and the last term is the electrostatic repulsion of the electrons with each other.
+
+We are focusing only on the electronic structure and not dynamics and have already simplified away the motion of the nuclei within the Born-Oppenheimer approximation\cite{BOref}.  Because the nulcei are at least 2000 times heavier than an electron, this amounts to considering the electrons to move much faster and at any instance respond to a fixed set of nuclear coordinates.  This removes the nuclear kinetic energy from the Hamiltoning for the electrons.  To obtain the electornic energy of the system this term must be added to the electronic energy obtained by solving the electronic-Schrodinger equation: 
+\begin{equation}
+H\Psi = E_{elec}\Psi
+\end{equation}  
+ 
+
+The remaining term non shown above is the nuclear-nuclear repulsions which for fixed nuclei is a constant term.  
+
+We have also neglected relativistic effects from this equation.  Those may be important for some heavier elements and a discussion of how to include them will be given later.
+
+
+The energy, $E_{Total} = E_{elec} + V_{NN}$, can be used to define a potential energy surface for the motion of the nuclei for optimization of structures, defining reaction paths, and even performing dynamics calculations.  The wavefunction, $\Psi$, can be used to calculate various properties and to obtain the total electronic density via $\left|\Psi\right|^2$.
+
+The earliest solutions encountered in most undergraduate physical chemistry or modern physics books are an exact solution to a non-relivistic hydrogen atom is shown.  For chemical applications this example provides a way to introduce the nature and type of atomic orbitals, i.e, s, p, d ..., which provides the local symmetries of the bais functions for further refinements of multieletron systems.  When the two-electron problem is next considered, the first approximations are introduced.  One method of finding an approximate solution is to modifiy the Hamiltonian to remove the hard part such as dropping the electron-electron repulsion term.  This give a simple independent particle approximation.  While not computationally useful from numerical perspectives it gives insight into the requirements of multi-electron systems to meet the exclusion principle and provides a simple introduction into casting multielectron wavefunctions as determinants of single particle functions.  
+  For example the solution to the 2-electron problem with the electron repulsion removed is
+  
+\begin{equation}
+H = -\frac{1}{2}\nabla^2_1 -  \frac{2}r_1 -\frac{1}{2}\nabla^2_2 - \frac{2}{r_2}
+\end{equation}
+  
+Because the Hamiltonian can be factored into separate terms for each electron with no interactions, the solution of the overall equation is a product of the individual electron terms.  Such a solution is the product of hydrogen-like orbitals with an increased nuclear charge.
+However, the Pauli Exclusion principle states that the wavefuntions must be anitsyemmetric under exchange of the labels for any two electrons ----- add a lot more here about this -----
+
+The way to ensure that the result satifyes the exclusiton principle is to take linear combinations of solutions with the same energy in the form
+\begin{equation} 
+\Psi(1,2) = \left|
+\begin{array}{cc}
+	\psi_1(1) & \psi_2(1) \\
+	\psi_1(2) & \psi_2(2) \\
+	\end{array} \right|
+	= \left(\psi_1(1)\psi_2(2) - \psi_1(2)\psi_2(1)\right)
+\end{equation}
+  
+This representation of electronic wavefunctions in terms of determinantal expressions is the basis for many approaches beyond this simple independent particle model.
+  
+  
+%
+%  Hartee Fock Section
+%  
+\section{Hartree-Fock Theory}
+
+
+The variational principle states that any approximate wavefuction, $\Psi_0$ will provide an approximate energy, $E_0$ that is an upper bound to the true energy when used as an expectation value with the correct Hamiltonian.\cite{VPrinc} 
+\begin{equation}
+\frac{\int{\Psi^*\widehat{H}\Psi d\tau}}{\int{\Psi^* \Psi d\tau}} = E_0 \geq E
+\end{equation}
+
+ If a wavefuction is given with parameters that can be varied then minimization of the energy with respect to those parameters give the closest energy possible to the exact energy of the system within the constraints of the wavefuction form.  If this idea is applied to the choice of a the wavefuction being a single determinant 
+
+\begin{equation}
+\Phi(1,2,...,n)=\left|
+\begin{array}{cccc}
+	\psi_1(1) & \psi_2(1) & \ldots & \psi_n(1) \\
+	\psi_1(2) & \psi_2(2) & \ldots & \psi_n(2) \\
+	\vdots & \vdots & \ddots & \vdots \\
+	\psi_1(n) & \psi_2(n) & \ldots & \psi_n(n)
+	\end{array} \right|
+\end{equation}
+and having the orbitals that form the determinant as the parameters that can be varied then the resulting description is known as the Hartree-Fock Approximation\index{Harree-Fock}.   The one-electron functions in the determinant that minimize the energy are  solutions of the Hartree-Fock equation:
+\begin{equation}
+\widehat{F}_i\psi_i = \epsilon_i\psi_i
+\label{HFeq}
+\end{equation}
+with the Fock operator, $\widehat{F}$, given as:
+\begin{equation}
+\widehat{F}_i = -\frac{1}{2}\nabla_i^2 - \sum_\nu^N{\frac{Z_\nu}{r_{i\nu}}} + \sum_j{\left(\widehat{J}_j - \widehat{K}_j\right)}
+\end{equation}
+
+A very good derivation of these equations can be found in the book by Szabo and Ostland.\cite{SzaboOstland}
+
+The solutions, $\psi$, are referred to as spin orbitals and there is one for each electron in the system.  The operators shown as $\widehat{J}_j$ and $\widehat{K}_j$ are the coulomb and exchange operators and are given by:
+
+\begin{equation}
+\widehat{J}_j\psi_i(x_1) = \psi_i(x_1)\int{\psi_j^*(x_2)\frac{1}{r_{12}}\psi_j(x_2)dx_2}
+\end{equation}
+
+\begin{equation}
+\widehat{K}_j\psi_i(x_1) = \psi_j(x_1)\int{\psi_j^*(x_2)\frac{1}{r_{12}}\psi_i(x_2)dx_2}
+\end{equation}
+
+Because the operators $\widehat{J}_J$ and $\widehat{K}_j$ contain the orbitals within the integrals, equation \ref{HFeq} must be solved in an iterative fashion by choosing a guess at the set of $\psi s$ and calculating new ones until a self-consistency is reached -- the new orbitals are the same as the previously ones.  Hence this procedure is also called the self-consistent field approach or SCF. The result is now another form of an independent particle approximation where one electron moves in the average field generated by the other N-1 electrons.  
+This is the solution for an effective Hamiltonian given by
+\begin{equation}
+H_{eff}=\sum_i{\widehat{F}_i}
+\end{equation}
+and the total electronic energy evaluated using the HF wavefuction with the correct Electronic Hamiltonian is
+
+\begin{align}
+E & = \int{\Phi^* \widehat{H} \Phi d\tau } \notag \\
+  & =  \sum_i^n{\int{\psi_i(x)^*h\psi_i(x)dx}} \notag \\
+  & + \frac{1}{2}{\sum_i^n{\sum_j^n{\int{\psi_i(x_1)^*\psi_j(x_2)^*\frac{1}{r_{ij}}\psi_i(x_1)\psi_j(x_2)dx_1dx_2}}}} \\
+  & - \frac{1}{2} \sum_i^n\sum_j^n{\int{\psi_i(x_1)^*\psi_j(x_2)^*\frac{1}{r_{ij}}\psi_j(x_1)\psi_i(x_2)dx_1dx_2}} \notag
+\end{align}
+where $h$ is the one-electron part of the Fock operator with the kinetic energy and nuclear attractions operators.
+
+Most large scale systems have a closed-shell singlet electronic structure.  A further approximation is to require spin-paired spin orbitals to have the same spacial orbital part.  For example $\psi_i = \phi_j \alpha$ and $\psi_i+1 = \phi_j \beta $.  Using this restriction and integrating over the spin part of the equations leads to the Restricted Hartree-Fock method (RHF) with the Fock operator written as:
+
+\begin{align}
+E & = \int {\Phi^*_{RHF} \widehat{H} \Phi_{RHF} d\tau } \\
+  & =  \sum_i^{n/2}{\int{\phi_i(x)^*h\phi_i(x)dx}} \notag \\
+  & + \frac{1}{2}{\sum_i^{n/2}{\sum_j^{n/2}{2\int{\phi_i(x_1)^*\phi_j(x_2)^*\frac{1}{r_{ij}}\phi_i(x_1)\phi_j(x_2)dx_1dx_2}}}}  \label{HFeqo} \\
+  & -  \frac{1}{2}\sum_i^{n/2}\sum_j^{n/2}{\int{\phi_i(x_1)^*\phi_j(x_2)^*\frac{1}{r_{ij}}\phi_j(x_1)\phi_i(x_2)dx_1dx_2}} \notag
+\end{align}
+
+
+Introducing a common short hand representation for the integrals as,
+\begin{equation}
+   \left\langle i j | k l \right\rangle = \int{ \phi_i(x_1)^*\phi_j(x_2)^*\frac{1}{r_{12}}\phi_k(x_1)\phi_l(x_2)dx_1dx_2 }
+\end{equation}
+ this equation is written as
+\begin{equation}
+E = \sum_i^{n/2}{\left\langle i | j \right\rangle} + \sum_{i>j}^{n/2}{2\left\langle ij|ij\right\rangle 
+ - \left\langle i j | j i \right\rangle }
+\end{equation}
+
+  In the above equations the variables are the orbitals that are obtained by solving the Hartee-Fock equations
+\begin{equation}
+    F \phi_i(x) = \epsilon_i \phi_i(x)
+\end{equation}
+  
+  
+If the orbitals are expanded in terms of a fixed basis set $ \left\{\chi_i\right\} $
+  
+\begin{equation}
+   \phi_i(x) = \sum_j^M{\chi_j(x) c_{ji}}
+\end{equation}
+
+and this is inserted into equation \ref{HFeqo}, it gives the usual Hartree-Fock expressions
+
+\begin{align}
+F_{ij} & =  \int{\chi_i \widehat{F} \chi_j dx} \\
+F_{ij} & =  h_{ij} + 2\sum_{\nu,l,m} {c_{l\nu}^* c_{m\nu} \int {\chi_i^* \chi_l^* \frac{1}{r_{12}} \chi_m \chi_j dx_1 dx_2}} \notag \\
+       & - \sum_{\nu,l,m} {c_{m\nu}^* c_{m\nu} \int {\chi_i^* \chi_l^* \frac{1}{r_{12}} \chi_j \chi_m dx_1 dx_2} } \\
+F_{ij} & =  h_{ij} + \sum_{\nu,l,m} {c_{l\nu}^* c_{m\nu}\left(2 \left\langle i l | m j \right\rangle - \left\langle i l | j m \right\rangle \right) }  \\
+F_{ij} & =  h_{ij} + \sum_{l,m} {P_{lm} \left( \left\langle i l | m j \right\rangle - \frac{1}{2}\left\langle i l | j m \right\rangle \right)}
+\end{align}
+where the density matrix, P, is defined as
+
+\begin{equation}
+P_{ij} = 2\sum_{\nu} c_{i\nu}^*c_{j\nu}
+\end{equation}
+
+These equations are solved iteratively by the following steps:
+\begin{enumerate}
+% following lengths do not work
+\setlength\leftmargin{6pt}
+\setlength\labelwidth{5pt}
+{\setlength\itemindent{25pt}	\item Choose initial guess for density matrix P}
+{\setlength\itemindent{25pt}	\item Calculate the Fock matrix, F}
+{\setlength\itemindent{25pt}	\item Solve euation xx to obtain orbials, C, and energies, $\epsilon$}
+{\setlength\itemindent{25pt}	\item Form new density matrix, P, from orbitals}
+{\setlength\itemindent{25pt} 	\item compare new density with previous step,}
+   \begin{enumerate}
+    {\setlength\itemindent{15pt} \setlength\labelwidth{7pt} \item if changes greater than a chosen tolerance then use the new P to start again at step 2.}
+    {\setlength\itemindent{15pt} \setlength\labelwidth{7pt} \item If density converged, then solution found}
+   \end{enumerate}
+\end{enumerate}
+
+\section{Basis Set Discussion}
+
+  
+  The first systematic use of basis sets was by Slater\cite{???} to fit a set of functions to describe the atomic orbitals.  These functions were of the form 
+\begin{equation}
+   \psi \left(r, \theta ,\phi \right) = N_{nlm}\left(\zeta\right) r^{n-1}e^{-\zeta r}Y_{lm}\left(\theta,\phi\right)
+\end{equation}
+where the $Y_{lm}\left(\theta,\phi\right)$ are the spherical harmonics giving the shape and correct angular momentum for each orbtial and $N_{nlm}\left(\zeta\right)$ is the appropriate normalization constant.  The coeficient in the exponental, $\zeta$, defines the radial extent of the funciton with larger values of $\zeta$ tigher, closer to the origin and smaller values of $\zeta$ more extended.
+  Further refinements where added by splitting the functions to describe an orbital in to 2 or more parts with different exponents, threby giving greater ability to fit.  These Slater-type-orbitals (STO) are rarely used in modern programs but the terminology carries on for "double zeta" basis sets and "`triple zeta"' basis sets, etc, to refer to the use of multiple basis functions for each atomic orbital.
+  
+  Because of the difficulty in calculating the integrals needed for molecular systems, in particularly multicenter two-electron integrals, Boys\cite{Boys} proposed the use of Gaussian-type orbitals (GTO).  These are must commonly used as:
+
+\begin{equation}
+    \gamma_i(x,y,z) = \left(x-x_A\right)^{k-i} \left(y-y_A\right)^{m_i} \left(z-z_A\right)^{l_i} e^{-\alpha_i \left|r-r_A\right|^2}
+\end{equation}
+where the gaussian is centered at $\left\{x_A,y_A,z_A\right\}$, usually on an atom but not necessarily.  This form replaces the "'spherical"' haromnic with a "`cartesian"' harmonic for easier integral evaluations.
+ 
+  There is still a single "s" function with $k+m+l=0$ and three "p" functions with $k+m+l=1$ but now there are 6 "d" functions from $k+l+m=2$.  These six functions include function combination $x+y+z$ which is an extra s-function.  If someone used their own exponents or adds functions to standard supplied basis sets there is the possibility of linear dependency, which will be discussed below.
+  
+  To provide better basis sets then just a single gaussian shape, several can be combined together in a fixed linear combination.  These new functions are refered too as contracted gaussian basis functions,
+\begin{equation}
+   \chi_i = \sum { d_{ij} \gamma_j }
+\end{equation}
+
+Pople's influence (huzanaga?)
+
+ -- polarization
+ 
+
+Dunning terminology
+
+Effective Core -- below
+
+Linear Dependency and how handled
+
+
+
+
+\section{Bottlenecks to HF}
+
+----- Bottlenecks and needs to cover
+\begin{itemize}
+	\item integral storage/direct methods
+	\item integral accuracy and precision
+	\item scaling with basis size  -- Ncube?
+\end{itemize}
+ There are many parts to solving the Hartree-Fock equations that lead to difficulites as the size of the system grows.  It is important to recognize this issues and also understand the way they are handled in modern quantum chemistry programs.
+  
+  At first glance, the calculation of the 2-electron integrals seems to be the biggest hurdle.  To calculate all possible integrals for a basis set of size N gives $N^4$ integrals.  For a single water molecule with typcially xxx basis funcitons for a good calucaiton this is lkllj integrals but for a 10-basis pair DNA helix there are about yyyy basis functions needed in the simplest case and this would be $yyx10^{88}$ integrals.  It is obvious way efficient ways to calculate these intergrals has been the area of a much research.
+  
+  One problem is if someone would calculate all these integrals then how would you store them and retrieve them as needed?  The answer to that is the implementation of "direct" method where the intergrals are never stored but calculated as needed.
+  
+    As it turns out for Hartree-Fock caluclations now all the possible intergrals need to be calucalted either.  Many of them are zero or too small to have an effect.  This is usually checked before calculation of an integral but use of the Schwartz Inequatilyt
+\begin{equation}
+  \left| \left\langle ij|kl \right\rangle\right| \leq  \left\langle i i | k k \right\rangle^{1/2} \left\langle j j | l l \right\rangle^{1/2}
+\end{equation}
+As the size of the system grows and primitive basis sets are farther apart then more and more of them are neglected and the $N^4$ scaling does not happen.  The limited step becomes the matrix manipulations in sovling the Hartree-Fock equations and scales as $N^3$.  This is still quite fast for very big systems and approzimations have been introduced to approach scaling as N, linear scaling.  This approximations are discussed later in this chapter.
+
+   There are two important quantities that should be adjusted in large scale calculations: the adjaljfld  and the ajdja;f
+   
+   
+  
+
+
+\section{Electron Correlation and Post HF}
+
+\subsection{Exact Answer}
+ But there is a prescription for finding the exact solution to a mulitelectron problem.  In 1955 L\"owdin\cite{POL55} shows such solutions can be expressed as sums of determinants built from a complete basis set.  This has become know as the Full-CI method.
+  
+ 
+  
+\begin{equation}
+\Psi(1,2,3,..,n)=\sum_K{C_{K}D_{K}(1,2,3,...,n)}
+\label{fullci}
+\end{equation}
+where the $D_K$ terms are all the possible determinants made up from all combinations of a complete basis set.
+
+Of course there are an infinite number of these terms and this is not a practical way to get the exact answer but does show a method for approaching it.  Eq. \ref{fullci} is the basis for configuration interaction approaches where a finite number of terms are selected.  If a fixed basis set is used and all determinants generated by that basis are used then this is know as a FullCI calculation and the best result possible within the theory based on that basis set.
+
+ As discussed above the difference between the Hartree-Fock approximation and the exact solution of the electonic Schrodinger Equation is that in the former an electron only sees the average field of all the others, wereas in the later each electron's motion would be instantaneously correlated with the other individual electrons.  The difference is energy between $E_{HF}$ and $E_{exact}$ is know as the correlation energy.
+
+\subsection{Configuration Interaction}
+There are many ways to organize and select terms to include in a CI expansion.  The most common procedure used is to use the Hartree-Fock approximation as a starting point and with the set of orbitals obtained organize the other terms by differences from the Hartree-Fock determinant refreed to as excitations.  For example
+\begin{equation}
+\Phi = \Phi_{HF} + \sum_{i,a}C_i^a\Phi_i^a + \sum_{i<j,a<b}C_{ij}^{ab}\Phi_{ij}^{ab} + \ldots
+\end{equation}
+this expansion would go up to n-electations.  The coeffecnts $C_i^a, C_{ij}^{ab}, \ldots$ are the linear variational prarmeters.  Trucations after the third term is called CCSD, after the fourth CCSDT, etc.  If only the first and third term are keep it is refreed to as the CCD method.  The double excitaitons are the most important largest interatctions with the refrences Hartree-Fock state because it can be shown that the single exications do not interact directly becasue
+\begin{equation}
+\int\Phi_{HF}^*\widehat{H}\Phi_i^ad\tau = \left\langle\Phi_{HF}\left|\widehat{H}\right|\Phi_i^a\right\rangle = 0
+\end{equation}
+
+\begin{equation}
+H=\left(
+\begin{array}{cccc}
+	E_{HF} & 0 & H_{0D} & \ldots \\
+	0 & H_{SS} & H_{SD} & \ldots \\
+	H_{D0} & H_{DS} & H_{DD} & \ldots \\
+	\vdots & \vdots & \vdots & \ddots 
+	\end{array}
+	\right)
+\end{equation}
+
+MCSCF
+
+ 
+\subsubsection{Perturbation Theory}
+\index{Perturbation Theory}
+An alternative approach to variational methods like those discussed above is break the Hamiltonian into parts that can be solved exactly and an additional part that leads to the system of interest.  This extra part is know as a perturbation and the approach is Perturbation Theory.  The Hamiltonian is expressed as 
+\begin{equation}
+\widehat{H} = \widehat{H}_0 + \widehat{V}
+\end{equation}
+with the known solutions to the $\widehat{H}_0$ from
+\begin{equation}
+\widehat{H}_0\Phi_i = E_i^{(0)}\Phi_i
+\end{equation}  
+following the outline in Shavitt and Bartlett \cite{ShavBart}, we can write the corrections as difference
+%\begin{equation}
+\begin{align}
+\chi_n = \Psi_n - \Phi_n \notag \\
+\Delta E_n = E_n - E_n^{(0)}
+\end{align}
+%\end{equation}
+
+
+lots of writing and figuring here
+
+%\begin{equation}
+\begin{align}
+\Psi_n = \Phi_n + \lambda\Psi_n^{(1)} + \lambda^2\Psi_n^{(2)} + \lambda^3\Psi_n^{(3)} + \ldots \notag \\
+E_n = E_n^{(0)} + \lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \lambda^3 E_n^{(3)} + \ldots
+\end{align}
+%\end{equation}
+  
+  
+Second-order engery is:
+\begin{equation}
+E_i^{(2)} = \sum_{j \neq i}\frac{\left|\int\Phi_i^*\widehat{V}\Phi_j d\tau\right|^2}{E_i^{(0)} - E_j^{(0)}}
+\end{equation}
+  
+  IF the reference state is taken as the Hartree-Fock wavefuction then for a closed shell RHF wavefunction this equations becomes
+\begin{equation}
+E_i^{(2)} = 2 \sum_{abrs} { \frac{\left\langle ab|rs \right\rangle \left\langle  rs|ab \right\rangle }{\epsilon_a + \epsilon_b - \epsilon_r - \epsilon_s} } - \sum_{abrs}^{N/2} { \frac{\left\langle ab|rs\right\rangle \left\langle rs|ba \right\rangle }{\epsilon_a + \epsilon_b - \epsilon_r - \epsilon_s} }
+\end{equation}
+where the $\epsilon_i s$ are the orbital energies and the sums over a and b are occupied orbitals and r and s are unoccupied orbitals.
+
+\subsubsection{Coupled Cluster}
+\index{Coupled Cluster Theory}
+In the coupled cluster approach the exact wavefuction is related to a refernece wavefucnion by an expoential operators of the form
+\begin{equation}
+\Psi = e^C\Phi_0
+\end{equation}
+where the $\Phi_0$ is most often the Hartree-Fock single determinant wavefuction.  The expoential operator is defined by the series expansion
+\begin{equation}
+e^C - 1 + C + \frac{1}{2!}C^2 + \frac{1}{3!}C^3 + \frac{1}{4!}C^4 + \ldots
+\end{equation}
+The terms in the operator are identified with the excitation level out of the reference state amd the operator C can be broken into various orders
+\begin{equation}
+C = C_1 + C_2 + C_3 + \ldots
+\end{equation}
+with each term corresponding to the number of electrons excited to the new configurations.  For eample $C_1$ is the set of single excitations and $C_2$ is the set of double excitations and represented as
+%\begin{equation}
+\begin{align}
+C_1\Phi_0 = \sum_{ap}t_a^p\Phi_a^p \notag \\
+C_2\Phi_0 = \sum_{a,b,p,q}t_{ab}^{pq}\Phi_{ab}^{pq}
+\end{align}
+%\end{equation}
+The coefficients $t_a^p, t_{ab}^{pq}, \ldots$ are refered to as amplitudes and are the paramters in this method.
+
+Equations for t and be developed
+
+If only the double excitation operator $C_2$ is keep the resulting approximation is referred to as CCD.  If single and double excitaitons are used it is know as CCSD and if triples are used it is CCSDT, and so on.
+
+
+\section{Density Functional Theory}
+\index{Density Functional Theory}
+
+
+Kohn-Sham\cite{KohnSham}
+
+\begin{equation}
+\left\{{-\frac{1}{2}\nabla_1^2}- \sum_\nu^N{\frac{Z_\nu}{r_{1\nu}}} + \int\frac{\rho(r_2)}{r_{12}}dr_2 + V_{XC}(r_1)\right\}\psi_i(r_1) = - \epsilon_i\psi_i(r_1)
+\end{equation}
+
+
+
+
+\section{Semiempirical Quantum Chemistry}
+Short discussion of popular schemes
+
+Mozeyme
+
+%---------------------------------------------------------------------------------------------------
+\section{Approaches to Large Molecules}
+
+\subsection{Effective Core Potentials}
+
+Replace Core with effective potential
+
+
+Averaged relativistic effectoe potential:
+\begin{equation}
+U_l^{AREP} = r^{-2}\sum_i{ C_{li}r^{n_{li}}e^{-\zeta_{li}r^2} }
+\end{equation}
+
+Hay Wayt type\cite{HayWadt1,HayWadt2,HayWadt3}, and SKJC type\cite{SBKpot1,SBKpot2,SBKpot3},  Dolg overview\cite{Dolg00}
+
+Tom Cundari's chapter 
+
+\subsection{Fragment-based Methods}
+
+There are several good refences on the Frangment Molecular Orbital Method (FMO) and this section is based on them. \cite{FedKit04, FedKit07, FedKit}
+
+One simple way to make a large problem more tractable is to break it up into smaller pieces, or fragments.  The whole can then be obtained by adding all the pieces back together. For example, the energy would be obtained via 
+\begin{equation}
+E^{FMO} = \sum_i^N E_i
+\end{equation}
+For non-interacting molecules or fragments this would be the right answer but not for interacting systems or, particularly for molecular systems broken into fragments across bonds.  The simplest FMO method uses the energy decomposition idea above and recognizes that exchange interactions are fairly local and that the dominate interaction is due to the Coulomb fields from the other fragments.  This basic method requires each $E_i$ is a calculation of fragment i in the presence of the electrostatic fields from all the other fragments.  Practically that requires forming an initial guess for the density of each fragment and calculating the electrostatic potentials then solving for new densities in a self-consistent procedure.
+
+In general, the energies of a fragment X is obtained from the Hamiltonian given as
+\begin{equation}
+\widehat{H}_{ij}^X = H_{ij}^X + V_{ij}^X + P_{ij}^X
+\end{equation}
+where, $V_{ij}^X$ is the electrostatic potential term and $P$ is the projection operator.
+\begin{equation}
+V_{ij}^X = \sum_{K\neq X}^N { \left\{ \sum_{A \in K} { \left\langle i\left|-\frac{Z_A}{\left|r - R_A\right|} \right|j\right\rangle } + \sum_{kl \in K} {D_{kl}^K (ij|kl) } \right\} }
+\end{equation}
+
+\begin{equation}
+P_{ij}^X = B\sum_{k \notin X} { \left\langle i | \phi_i^k \right\rangle \left\langle \phi_i^k | j \right\rangle }
+\end{equation}
+
+
+includes electrostatics from other fragments
+solved self consistently
+
+Improvements:
+1) fragments size
+2) Two and three-body interactions
+
+Need for accuracy improvements
+
+Fragment formations -- bond breaking methods
+
+
+
+Two-body FMO expansion
+\begin{align}
+E^{FMO2} & = \sum_i^N{E_i} + \sum_{i>j}^N{\left(E_{ij} - E_i - E_j \right)} \\
+         & = \sum_{i>j}^N E_{ij} - \left( N_f - 2 \right) \sum_i E_i
+\end{align}
+
+or a three-body expansion
+\begin{align}
+E^{FMO3} & = \sum_{i} E_{i} + \sum_{i>j} \left(E_{ij} - E_i - E_j \right) \notag \\
+   &  - \sum_{i>j>k} {\left(\left[E_{ijk} - E_i - E_j \right] - \left[E_{ij} - E_i - E_j \right] - \left[E_{ik} - E_i -  E_k\right] - \left[E_{jk} - E_j - E_k\right]\right) } \notag \\
+   & = \sum_{i>j>k}E_{ijk} - \left(N_f - 3\right)\sum_{i>j}E_{ij} + \frac{\left(N_f - 2\right)\left(N_f - 3\right)}{2} \sum_i E_i
+\end{align}
+
+\subsection{Divide and Conquer}
+
+\subsection{Linear-Scaling Methods}
+
+
+\subsection{The ONIOM method}
+
+\begin{align}
+E^{high}(R) \approx E^{low}(SM) & + \left\{ E^{low}(R) - E^{low}(SM) \right\} \notag \\
+                                & + \left\{ E^{high}(SM) - E^{low}(SM) \right\}
+\end{align}
+\begin{equation}
+E^{ONIOM} = E^{low}(R) - E^{high}(SM) - E^{low}(SM)
+\end{equation}
+
+\subsection{Local Orbitals versus Canonical Orbitals}
+
+\subsection{NBO Analysis}
+
+\section{Something about Molecular Mechanics?}
+\subsection{Typical Force Fields and Programs}
+\subsection{Polarizable Force Fields}
