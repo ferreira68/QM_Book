@@ -1,0 +1,7 @@
+This directory is for storing common BibTeX files
+
+Need to include bookrefs.bib in this directory with:
+
+     - cvs add bookrefs.bib
+     - cvs commit
+
